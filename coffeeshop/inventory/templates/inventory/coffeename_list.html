@@ -4,7 +4,7 @@
 <table>
     {% for coffee in object_list%}
         <tr>
-            <td>{{coffee.title}}</td> 
+            <td>{{coffee.title}} - {{coffee.description}}</td> 
             <td><a href="{% url 'deleteCoffee' coffee.id %}">Delete</a></td>
         </tr>
     {% empty %}

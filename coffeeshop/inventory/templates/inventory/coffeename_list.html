@@ -1,0 +1,14 @@
+<html>
+    <h3> Coffee List </h3>
+    <td><a href="{% url 'addCoffee' %}">Add</a></td>
+<table>
+    {% for coffee in object_list%}
+        <tr>
+            <td>{{coffee.title}}</td> 
+            <td><a href="{% url 'deleteCoffee' coffee.id %}">Delete</a></td>
+        </tr>
+    {% empty %}
+        <h1>No items</h1>
+    {% endfor %}
+</table>
+</html>

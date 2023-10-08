@@ -1,0 +1,5 @@
+<h3> Delete Coffee? {{coffee}} </h3>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>

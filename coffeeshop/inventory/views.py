@@ -8,6 +8,7 @@ from .models import CoffeeName
 
 class coffeeList(ListView): 
     model = CoffeeName
+    context_object_name = 'coffee_names'
 
 class AddCoffee(CreateView): 
     model = CoffeeName

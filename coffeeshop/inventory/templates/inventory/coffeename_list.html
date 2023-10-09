@@ -10,6 +10,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="display-4 mb-3">Coffee</h1>
+        <a href="{% url 'products_list' %}" class="btn btn-primary mb-3">Shop</a>
         <a href="{% url 'addCoffee' %}" class="btn btn-primary mb-3">Add</a>
         <table class="table">
             {% for coffee in object_list %}

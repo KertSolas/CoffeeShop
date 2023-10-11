@@ -36,14 +36,12 @@
         </div>
     </nav>
 
-    <img src="/coffeeshop/shop/templates/shop/coffee-1.jpg" class="img-fluid">
-
     <div class="container mt-5">
         <h2>Coffee</h2>
         <div class="row">
             {% for product in coffee_names %}
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card card border-warning bg-light mb-2" style="max-width: 20rem; ">
+                    <div class="card mb-2" style="max-width: 20rem; background-color: rgb(255, 245, 202);">
                         <div class="card-body">
                             <h5 class="card-title">{{ product.title }}</h5>
                             <p class="card-text">Price: ₱{{ product.price }}</p>

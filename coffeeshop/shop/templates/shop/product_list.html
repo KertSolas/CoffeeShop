@@ -10,6 +10,7 @@
     <link href="/coffeeshop/shop/static/style.css" rel="stylesheet">
 </head>
 
+<<<<<<< Updated upstream
 <body>
 
     <style>
@@ -22,6 +23,9 @@
         }
     </style>
     
+=======
+<body style="background-image: url('coffee-1.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+>>>>>>> Stashed changes
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light transparent-navbar">
         <div class="container">
@@ -50,10 +54,10 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ product.title }}</h5>
-                                <p class="card-text">Price: ₱{{ product.price }}</p>
-                                <a href="#" class="btn btn-success">Buy</a>
-                            </div>
-                     </div>
+                            <p class="card-text">Price: ₱{{ product.price }}</p>
+                            <a href="#" class="btn btn-success">Buy</a>
+                        </div>
+                    </div>
                 </div>
             {% empty %}
                 <div class="col">

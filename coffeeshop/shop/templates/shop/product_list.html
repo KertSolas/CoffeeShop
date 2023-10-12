@@ -38,44 +38,71 @@
     </nav>
 
     <div class="container mt-5">
-        <h2>Coffee</h2>
         <div class="row">
-            {% for product in coffee_names %}
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card mb-2" style="max-width: 20rem; background-color: rgb(255, 245, 202);">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ product.title }}</h5>
-                            <p class="card-text">Price: ₱{{ product.price }}</p>
-                            <a href="#" class="btn btn-success">Buy</a>
-                        </div>
+            <!-- Filter Options Sidebar (Left Side) -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="card-body"  style="background-color: rgb(255, 245, 202);">
+                        <h5 class="card-title">Filter</h5>
+                        <!-- Add filter options here (e.g., category, price range, etc.) -->
+                        <form>
+                            <div class="mb-3">
+                                <label for="categorySelect" class="form-label">Category</label>
+                                <select class="form-select" id="categorySelect">
+                                    <option value="coffee">Coffee</option>
+                                    <option value="cakes">Cakes</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="priceRange" class="form-label">Price Range</label>
+                                <input type="range" class="form-range" id="priceRange">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Apply Filters</button>
+                        </form>
                     </div>
                 </div>
-            {% empty %}
-                <div class="col">
-                    <p>No coffee products available</p>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-
-    <div class="container mt-5">
-        <h2>Cakes</h2>
-        <div class="row">
-            {% for product in cake_names %}
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ product.title }}</h5>
-                            <p class="card-text">Price: ₱{{ product.price }}</p>
-                            <a href="#" class="btn btn-success">Buy</a>
+            </div>
+            
+            <!-- Product Listings (Right Side) -->
+            <div class="col-md-9">
+                <h2>Coffee</h2>
+                <div class="row">
+                    {% for product in coffee_names %}
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card mb-2" style="max-width: 20rem; background-color: rgb(255, 245, 202);">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <p class="card-text">Price: ₱{{ product.price }}</p>
+                                    <a href="#" class="btn btn-success">Buy</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    {% empty %}
+                        <div class="col">
+                            <p>No coffee products available</p>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% empty %}
-                <div class="col">
-                    <p>No cake products available</p>
+                
+                <h2>Cakes</h2>
+                <div class="row">
+                    {% for product in cake_names %}
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <p class="card-text">Price: ₱{{ product.price }}</p>
+                                    <a href="#" class="btn btn-success">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="col">
+                            <p>No cake products available</p>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
+            </div>
         </div>
     </div>
 

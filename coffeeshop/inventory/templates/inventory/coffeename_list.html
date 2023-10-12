@@ -7,9 +7,9 @@
     <!-- Add Bootstrap CSS link here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body style="background-color: rgb(249, 218, 180); background-image: url(https://imgur.com/F0F9jRV.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<body style="background-image: url(https://imgur.com/F0F9jRV.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light transparent-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light transparent-navbar" style="background-color: rgb(249, 218, 180);">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="https://imgur.com/VxY2Srm.png" class="mr-2">
@@ -26,6 +26,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'products_list' %}">Shop</a>
                     </li>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
                 </ul>
             </div>
         </div>
@@ -33,7 +35,7 @@
     <div class="container mt-5">
         <h1 class="display-4 mb-4">Coffee</h1>
         <a href="{% url 'addCoffee' %}" class="btn btn-success mb-4">Add</a>
-        <table class="table">
+        <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th scope="col">Title</th>
@@ -41,14 +43,16 @@
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
-            <tbody style="background-color: antiquewhite;">
+            <tbody>
                 {% for coffee in object_list %}
                     <tr>
                         <td>{{ coffee.title }}</td>
                         <td>{{ coffee.description }}</td>
                         <td>
-                            <a href="{% url 'deleteCoffee' coffee.id %}" class="btn btn-danger">Delete</a>
-                            <a href="{% url 'updateCoffee' coffee.id %}" class="btn btn-warning" style="background-color: #fff3e2;">Edit</a>
+                            <div class="btn-group">
+                                <a href="{% url 'deleteCoffee' coffee.id %}" class="btn btn-danger">Delete</a>
+                                <a href="{% url 'updateCoffee' coffee.id %}" class="btn btn-warning">Edit</a>
+                            </div>
                         </td>
                     </tr>
                 {% empty %}
